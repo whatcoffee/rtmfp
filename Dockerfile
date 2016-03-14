@@ -10,7 +10,7 @@ RUN wget https://github.com/MonaSolutions/MonaServer/archive/master.zip
 #RUN unzip master.zip && cd MonaServer-master && make && cd MonaServer && mkdir www && mkdir www/myapp && cp ../MonaCore/lib/libMonaCore.so libMonaCore.so && cp ../MonaBase/lib/libMonaBase.so libMonaBase.so
 RUN unzip master.zip
 RUN cp -r MonaServer-master/MonaServer MonaServer && rm -rf MonaServer-master
-RUN ls -al
+RUN ls -al && ls -al MonaServer
 RUN cd MonaServer && make
 RUN cd ~ && cp MonaServer/MonaServer/MonaServer _monserver && mkdir www && mkdir www/myapp
 RUN cp MonServer/MonaCore/lib/libMonaCore.so libMonaCore.so && cp MonaServer/MonaBase/lib/libMonaBase.so libMonaBase.so
