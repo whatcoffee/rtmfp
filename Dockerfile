@@ -12,7 +12,7 @@ RUN unzip master.zip
 RUN mv MonaServer-master MonaServer
 RUN ls -al && ls -al MonaServer
 RUN cd MonaServer && make && cd /
-RUN cp MonaServer/MonaServer/MonaServer _monserver && mkdir www && mkdir www/myapp
+RUN cp MonaServer/MonaServer/MonaServer _monaserver && mkdir www && mkdir www/myapp
 RUN cp MonaServer/MonaCore/lib/libMonaCore.so libMonaCore.so && cp MonaServer/MonaBase/lib/libMonaBase.so libMonaBase.so
 RUN ls -al
 
@@ -20,4 +20,4 @@ RUN ls -al
 EXPOSE 1935 1936
 
 #ENTRYPOINT ["./_monaserver"]
-CMD echo "2" && _monaserver
+CMD echo "1" && _monaserver
