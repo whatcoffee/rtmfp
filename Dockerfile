@@ -13,7 +13,7 @@ RUN mv MonaServer-master MonaServer
 RUN ls -al && ls -al MonaServer
 RUN cd MonaServer && make && cd /
 RUN cp MonaServer/MonaServer/MonaServer _monserver && mkdir www && mkdir www/myapp
-RUN cp MonServer/MonaCore/lib/libMonaCore.so libMonaCore.so && cp MonaServer/MonaBase/lib/libMonaBase.so libMonaBase.so
+RUN cp MonaServer/MonaCore/lib/libMonaCore.so libMonaCore.so && cp MonaServer/MonaBase/lib/libMonaBase.so libMonaBase.so
 RUN ls -al
 
 
