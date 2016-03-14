@@ -7,9 +7,15 @@ RUN apt-get clean
 RUN wget http://luajit.org/download/LuaJIT-2.0.4.tar.gz
 RUN tar -xzf LuaJIT-2.0.4.tar.gz && rm LuaJIT-2.0.4.tar.gz && cd LuaJIT-2.0.4 && make && make install
 RUN wget https://github.com/MonaSolutions/MonaServer/archive/master.zip
-RUN unzip master.zip && cd MonaServer-master && make && cd MonaServer && mkdir www && mkdir www/myapp && cp ../MonaCore/lib/libMonaCore.so libMonaCore.so && cp ../MonaBase/lib/libMonaBase.so libMonaBase.so
+#RUN unzip master.zip && cd MonaServer-master && make && cd MonaServer && mkdir www && mkdir www/myapp && cp ../MonaCore/lib/libMonaCore.so libMonaCore.so && cp ../MonaBase/lib/libMonaBase.so libMonaBase.so
+RUN unzip master.zip
+RUN cp -r MonaServer-master/MonaServer MonaServer && rm -rf MonaServer-master
+RUN cd MonServer && make
+RUN cd ~ && cp MonaServer/MonaServer/MonaServer _monserver && mkdir www && mkdir www/myapp
+RUN cp MonServer/MonaCore/lib/libMonaCore.so libMonaCore.so && cp MonaServer/MonaBase/lib/libMonaBase.so libMonaBase.so
+RUN ls -al | echo
 
 
 EXPOSE 1935 1936
 
-ENTRYPOINT ["MonaServer-master/MonaServer/MonaServer"]
+ENTRYPOINT ["MonaServer/MonaServer"]
