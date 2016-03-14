@@ -14,6 +14,7 @@ RUN ls -al && ls -al MonaServer
 RUN cd MonaServer && make && cd /
 RUN cp MonaServer/MonaServer/MonaServer _monaserver && mkdir www && mkdir www/myapp
 RUN cp MonaServer/MonaCore/lib/libMonaCore.so /usr/local/lib/libMonaCore.so && cp MonaServer/MonaBase/lib/libMonaBase.so /usr/local/lib/libMonaBase.so
+ADD MonaServer.ini MonaServer.ini
 RUN ls -al
 
 
