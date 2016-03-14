@@ -20,4 +20,4 @@ RUN ls -al
 
 EXPOSE 1935 1936
 
-ENTRYPOINT ["_monaserver"]
+ENTRYPOINT ["./_monaserver"]
