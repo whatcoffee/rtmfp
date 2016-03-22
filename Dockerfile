@@ -22,4 +22,4 @@ RUN ls -al
 
 EXPOSE 1935 1936 80
 
-ENTRYPOINT ["/MonaServer/MonaServer/MonaServer"]
+CMD /MonaServer/MonaServer/MonaServer --daemon && vi test.txt
