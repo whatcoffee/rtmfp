@@ -20,6 +20,6 @@ RUN cp MonaServer.ini MonaServer/MonaServer/MonaServer.ini
 RUN ls -al
 
 
-EXPOSE 1935 1936
+EXPOSE 1935 1936 80
 
 ENTRYPOINT ["/MonaServer/MonaServer/MonaServer"]
